@@ -1,0 +1,32 @@
+- name: Install Java
+  become: true
+  apt:
+    name: ["openjdk-8-jdk", "default-jdk", "default-jre"]
+  tags:
+    - core
+    - nvim
+    - scala
+- name: Download Coursier
+  get_url: url=https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz dest=/tmp/cs.gz
+  tags:
+    - core
+    - nvim
+    - scala
+- name: Unpack Coursier installation
+  command: gzip -d -f /tmp/cs.gz
+  tags:
+    - core
+    - nvim
+    - scala
+- name: Add execution privlage
+  command: chmod +x /tmp/cs
+  tags:
+    - core
+    - nvim
+    - scala
+- name: Install Coursier (cs, scala-cli, scala, scalac, sbt, ammonite, scalafmt)
+  command: /tmp/cs setup --yes
+  tags:
+    - core
+    - nvim
+    - scala

@@ -1,0 +1,7 @@
+- name: Download nvim nightly releas
+  get_url: url=https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb dest=/tmp/nvim.deb
+  tags: &tags_for_nvim [ 'install', 'productivity', 'dotfiles', 'nvim' ]
+
+- name: Install nvim nightly
+  apt: deb="/tmp/nvim.deb"
+  tags: *tags_for_nvim
