@@ -13,7 +13,8 @@
   tags:
     - core
     - nvim
-- name: Install snaps
-  become:
-    snap:
-      ["qualculate", "spotify"]
+
+# - name: Install snaps
+  # become:
+    # snap:
+      # ["qualculate", "spotify"]

@@ -1,0 +1,44 @@
+- name: Instal vscode language server (HTML, CSS, JSON, EsLint)
+  npm:
+    name: vscode-langservers-extracted
+    global: yes
+  tags:
+    - install
+    - node
+    - lsp
+
+- name: Install cssmodules langauge server
+  npm:
+    name: cssmodules-language-server
+    global: yes
+  tags:
+    - install
+    - node
+    - lsp
+
+- name: Install bash langauge server
+  npm:
+    name: bash-language-server
+    global: yes
+  tags:
+    - install
+    - node
+    - lsp
+
+- name: Install python langauge server
+  npm:
+    name: pyright
+    global: yes
+  tags:
+    - install
+    - node
+    - lsp
+
+- name: Install ansible langauge server
+  npm:
+    name: '@ansible/ansible-language-server'
+    global: yes
+  tags:
+    - install
+    - node
+    - lsp

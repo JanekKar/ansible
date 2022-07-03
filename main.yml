@@ -11,8 +11,10 @@
           - install
           - core
     tasks:
-      - include: tasks/zsh.yml
+      - include: tasks/core.yml
+      - include: tasks/node.yml
+      - include: tasks/lsp.yml
       - include: tasks/nvim.yml
       - include: tasks/scala.yml
-      - include: tasks/core.yml
+      - include: tasks/zsh.yml
 
