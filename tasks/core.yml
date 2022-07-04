@@ -9,7 +9,7 @@
 - name: Install core system packages 2
   become: true
   apt:
-    name: ["gettext", "htop", "dconf-editor", "python3-pip", "build-essential", "gnome-tweaks", "deja-dup", "exa", "lm_sensors", "net-tools", "snapd"]
+    name: ["gettext", "htop", "dconf-editor", "python3-pip", "build-essential", "gnome-tweaks", "deja-dup", "exa", "lm-sensors", "net-tools", "snapd"]
   tags:
     - core
     - nvim

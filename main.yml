@@ -17,4 +17,3 @@
       - include: tasks/nvim.yml
       - include: tasks/scala.yml
       - include: tasks/zsh.yml
-
