@@ -12,6 +12,7 @@
           - core
     tasks:
       - include: tasks/core.yml
+      - include: tasks/chrome.yml
       - include: tasks/node.yml
       - include: tasks/lsp.yml
       - include: tasks/nvim.yml
