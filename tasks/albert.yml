@@ -1,5 +1,12 @@
 - name: Add PPA
   become: true
+  shell: "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_{{ansible_distribution_version}}/ /' | sudo tee /etc/apt/sources.list.d/home:manuelschneid3r.list"
+  tags:
+    - install
+    - albert
+
+- name: Add PPA
+  become: true
   shell: "curl -fsSL https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_{{ansible_distribution_version}}/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_manuelschneid3r.gpg > /dev/null"
   tags:
     - install
@@ -20,3 +27,6 @@
   tags:
     - install
     - albert
+   # # 2 sudok apt update
+    # 3 sudo apt install -y albert
+# {{ ansible_distribution_version}}
