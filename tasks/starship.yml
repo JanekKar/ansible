@@ -1,3 +1,0 @@
-- name: Download starship
-  shell: cur -sS https://starship.rs/install.sh | sh
-

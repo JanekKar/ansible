@@ -35,5 +35,5 @@
   tags: *tags_for_zsh_tasks
 
 - name: Download starship
-  shell: curl -sS https://starship.rs/install.sh | sh
+  shell: curl -sS https://starship.rs/install.sh | sh -s -- -y
   tags: *tags_for_zsh_tasks
