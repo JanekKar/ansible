@@ -5,7 +5,7 @@
     - install
     - albert
 
-- name: Add PPA
+- name: Add PPA pt2 ?
   become: true
   shell: "curl -fsSL https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_{{ansible_distribution_version}}/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_manuelschneid3r.gpg > /dev/null"
   tags:

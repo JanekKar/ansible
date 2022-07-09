@@ -1,0 +1,23 @@
+- name: Remove previos docker versions
+  apt: ["docker","docker-engine","docker.io","containerd","runc"]
+  state: absent
+  tags: &tags_docker ["docker", "install"]
+
+- name: Adding necessary packages
+  apt: ["apt-transport-https", "ca-certificates", "gnupg-agent", "software-properties-common"]
+  tags: *tags_docker
+
+- name: Set up repository
+  shell: echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null"
+  tags: *tags_docker
+
+- name: Update apt
+  become: true
+  apt:
+    update_cache: true
+    state: present
+  tags: *tags_docker
+
+- name: Install Docker Engine
+  become: true
+  apt: ["docker-ce", "docker-ce-cli", "containerd.io", "docker-compose-plugin"]

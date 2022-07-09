@@ -12,6 +12,7 @@
           - core
     tasks:
       - include: tasks/core.yml
+      - include: tasks/docker.yml
       - include: tasks/albert.yml
       - include: tasks/chrome.yml
       - include: tasks/node.yml
