@@ -28,3 +28,18 @@
     update_cache: true
     state: present
   tags: *tags_docker
+
+- name: Create docker group
+  become: true
+  shell: "sudo groupadd docker"
+  tags: *tags_docker
+
+- name: Add user to group
+  become: true
+  shell: "sudo usermod -aG docker $USER && newgrp docker"
+  tags: *tags_docker
+
+- name: Startd docker on startup
+  become: true
+  shell: "sudo systemctl enable docker.service && sudo systemctl enable containerd.service"
+  tags: *tags_docker
