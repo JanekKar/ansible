@@ -31,7 +31,7 @@
 
 - name: Create docker group
   become: true
-  shell: "sudo groupadd docker"
+  shell: "sudo groupadd -f docker"
   tags: *tags_docker
 
 - name: Add user to group
