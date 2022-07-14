@@ -12,18 +12,10 @@
     - install
     - albert
 
-- name: Update apt
-  become: true
-  apt:
-    update_cache: true
-    state: present
-  tags:
-    - install
-    - albert
-
 - name: Install Albert
   become: true
   apt: name=albert
+    update_cache: true
   tags:
     - install
     - albert

@@ -17,4 +17,9 @@
 # - name: Install snaps
   # become:
     # snap:
-      # ["qualculate", "spotify"]
+      # ["qualculate", "spotify", ""]
+
+# - name: Install snaps --classic
+  # become:
+    # snap:
+      # ["intellij-idea-ultimate"]

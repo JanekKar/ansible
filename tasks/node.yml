@@ -1,3 +1,12 @@
+- name: Remove old nodejs and npm
+  become: true
+  apt:
+    name: ["nodejs", "node", "npm"]
+    state: absent
+  tags:
+  - install
+  - node
+
 - name: Add node-16.x ppa
   become: true
   shell: 'curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -'

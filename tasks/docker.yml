@@ -36,7 +36,7 @@
 
 - name: Add user to group
   become: true
-  shell: "sudo usermod -aG docker $USER && newgrp docker"
+  shell: "sudo usermod -aG docker {{ lookup('env', 'HOME') }}"
   tags: *tags_docker
 
 - name: Startd docker on startup
