@@ -1,4 +1,4 @@
-- name: Full linux setup
+  - name: Full linux setup
     hosts: localhost
     connection: local
     pre_tasks:
