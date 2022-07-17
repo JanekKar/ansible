@@ -1,6 +1,7 @@
 - name: Install ZSH
   become: true
-  apt: name=zsh
+  apt:
+    name: zsh
     only_upgrade: yes
   tags: &tags_for_zsh_tasks [ 'install', 'productivity', 'dotfiles', 'zsh' ]
 

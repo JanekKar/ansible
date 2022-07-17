@@ -5,6 +5,9 @@
   tags:
     - core
     - nvim
+    - chrome
+    - albert
+    - docker
 
 - name: Install core system packages 2
   become: true

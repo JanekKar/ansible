@@ -14,11 +14,9 @@
 
 - name: Install Albert
   become: true
-  apt: name=albert
+  apt:
+    name: albert
     update_cache: true
   tags:
     - install
     - albert
-   # # 2 sudok apt update
-    # 3 sudo apt install -y albert
-# {{ ansible_distribution_version}}

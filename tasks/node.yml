@@ -6,6 +6,7 @@
   tags:
   - install
   - node
+  - lsp
 
 - name: Add node-16.x ppa
   become: true
@@ -13,6 +14,7 @@
   tags:
   - install
   - node
+  - lsp
 
 - name: Install nodejs and npm
   become: true
@@ -21,24 +23,28 @@
   tags:
   - install
   - node
+  - lsp
 
 - name: npmjs prefix
   shell: mkdir -p "{{ lookup('env', 'HOME') }}/.local/.npm-global"
   tags:
   - install
   - node
+  - lsp
 
 - name: add npmjs to path
   shell: PATH=~/.local/.npm-global/bin:$PATH
   tags:
   - install
   - node
+  - lsp
 
 - name: npmjs global settings
   shell: npm config set prefix "{{ lookup('env', 'HOME') }}/.local/.npm-global"
   tags:
   - install
   - node
+  - lsp
 
 - name: npmjs global settings export path in case I don't have dotfiles installed
   shell: export PATH=~/.local/.npm-global/bin:$PATH
@@ -46,3 +52,4 @@
   - install
   - node
   - npm-path
+  - lsp

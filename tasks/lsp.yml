@@ -4,7 +4,6 @@
     global: yes
   tags:
     - install
-    - node
     - lsp
 
 - name: Install cssmodules langauge server
@@ -13,7 +12,6 @@
     global: yes
   tags:
     - install
-    - node
     - lsp
 
 - name: Install bash langauge server
@@ -22,7 +20,6 @@
     global: yes
   tags:
     - install
-    - node
     - lsp
 
 - name: Install python langauge server
@@ -31,7 +28,6 @@
     global: yes
   tags:
     - install
-    - node
     - lsp
 
 - name: Install ansible langauge server
@@ -40,5 +36,4 @@
     global: yes
   tags:
     - install
-    - node
     - lsp

@@ -1,4 +1,4 @@
-  - name: Full linux setup
+- name: Full linux setup
     hosts: localhost
     connection: local
     pre_tasks:
@@ -20,5 +20,6 @@
       - include: tasks/nvim.yml
       - include: tasks/scala.yml
       - include: tasks/zsh.yml
-      # - include: tasks/slack.yml
-      # - include: tasks/1password.yml
+      - include: tasks/slack.yml
+      - include: tasks/1password.yml
+      # - include: tasks/config.yml
