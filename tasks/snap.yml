@@ -1,0 +1,13 @@
+- name: Install Snaps
+  snap:
+    name:
+      - discord
+      - qalculate
+      - spotify
+
+- name: Install classic Snaps
+  snap:
+    name:
+      - intellij-idea-community
+      - intellij-idea-ultiate
+    classic: yes

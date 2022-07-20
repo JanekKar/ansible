@@ -1,0 +1,6 @@
+- name: Install install Gnome Terminal profile
+  shell: 'dconf load -f /org/gnome/terminal/ < $HOME/.dotfiles/terminal.conf'
+  tags:
+    - terminal
+    - dconf
+    - dotfiles

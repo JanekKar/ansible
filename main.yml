@@ -12,6 +12,7 @@
           - core
     tasks:
       - include: tasks/core.yml
+      - include: tasks/snap.yml
       - include: tasks/docker.yml
       - include: tasks/albert.yml
       - include: tasks/chrome.yml
@@ -22,4 +23,7 @@
       - include: tasks/zsh.yml
       - include: tasks/slack.yml
       - include: tasks/1password.yml
-      # - include: tasks/config.yml
+      - include: tasks/dotfiles.yml
+      - include: tasks/terminal.yml
+        # Snaps (or move replace them with binaries)
+        # Test dotfiles - probably wont work
