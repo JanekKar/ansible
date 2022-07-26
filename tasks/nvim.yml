@@ -6,3 +6,7 @@
   become: true
   apt: deb="/tmp/nvim.deb"
   tags: *tags_for_nvim
+
+- name: Install packer
+  shell: "git clone --depth 1 https://github.com/wbthomason/packer.nvim  ~/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  tags: ['install', 'nvim', 'packer']
