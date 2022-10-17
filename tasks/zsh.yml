@@ -6,7 +6,7 @@
 
 - name: Change shell to zsh
   become: true
-  user: name=janek shell=/usr/bin/zsh
+  user: name={{ lookup('env', 'USER') }} shell=/usr/bin/zsh
   tags: *tags_for_zsh_tasks
 
 - name: Check that the somefile.conf exists
@@ -16,10 +16,10 @@
   tags: *tags_for_zsh_tasks
 
 - name: Oh-My-Zsh
-  shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > ~/.oh-my-installer && chmod +x ~/.oh-my-installer && ~/.oh-my-installer
+  shell: "curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > {{ lookup('env', 'HOME') }}/.oh-my-installer && chmod +x {{ lookup('env', 'HOME') }}/.oh-my-installer && {{ lookup('env', 'HOME') }}/.oh-my-installer"
   tags: *tags_for_zsh_tasks
   when: oh_my_stats.stat.exists == False
-  become_user: janek
+  become: true
 
 - name: Install zsh-autosuggestions
   ansible.builtin.git:

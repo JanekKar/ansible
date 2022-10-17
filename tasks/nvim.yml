@@ -7,6 +7,13 @@
   apt: deb="/tmp/nvim.deb"
   tags: *tags_for_nvim
 
+- name: Check that the somefile.conf exists
+  stat:
+    path: "{{ lookup('env', 'HOME') }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  register: packer_stats
+  tags: *tags_for_nvim
+
 - name: Install packer
-  shell: "git clone --depth 1 https://github.com/wbthomason/packer.nvim  ~/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  shell: "git clone --depth 1 https://github.com/wbthomason/packer.nvim  {{ lookup('env', 'HOME') }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  when: packer_stats.stat.exists == False
   tags: ['install', 'nvim', 'packer']
