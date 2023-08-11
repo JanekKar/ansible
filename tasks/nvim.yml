@@ -1,10 +1,10 @@
 - name: Download nvim nightly releas
-  get_url: url=https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb dest=/tmp/nvim.deb
+  get_url: url=https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz dest={{ lookup('env', 'HOME') }}/nvim-linux64.tar.gz
   tags: &tags_for_nvim [ 'install', 'nvim' ]
 
 - name: Install nvim nightly
   become: true
-  apt: deb="/tmp/nvim.deb"
+  shell: "tar xzvf {{ lookup('env', 'HOME') }}/nvim-linux64.tar.gz "
   tags: *tags_for_nvim
 
 - name: Check that the somefile.conf exists
