@@ -11,20 +11,17 @@
           - install
           - core
     tasks:
-      - include: tasks/core.yml
-      - include: tasks/snap.yml
-      - include: tasks/docker.yml
-      - include: tasks/albert.yml
-      - include: tasks/chrome.yml
-      - include: tasks/node.yml
-      - include: tasks/lsp.yml
-      - include: tasks/nvim.yml
-      - include: tasks/scala.yml
-      - include: tasks/zsh.yml
-      - include: tasks/slack.yml
-      - include: tasks/1password.yml
-      - include: tasks/dotfiles.yml
-      - include: tasks/terminal.yml
-      - include: tasks/brave.yml
-        # Snaps (or move replace them with binaries)
+      - import_tasks: tasks/core.yml
+      - import_tasks: tasks/snap.yml
+      - import_tasks: tasks/docker.yml
+      - import_tasks: tasks/albert.yml
+      - import_tasks: tasks/node.yml
+      - import_tasks: tasks/lsp.yml
+      - import_tasks: tasks/nvim.yml
+      - import_tasks: tasks/scala.yml
+      - import_tasks: tasks/zsh.yml
+      - import_tasks: tasks/1password.yml
+      - import_tasks: tasks/dotfiles.yml
+      - import_tasks: tasks/terminal.yml
+      - import_tasks: tasks/brave.yml
         # Test dotfiles - probably wont work

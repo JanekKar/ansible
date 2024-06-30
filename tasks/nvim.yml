@@ -2,9 +2,12 @@
   get_url: url=https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz dest={{ lookup('env', 'HOME') }}/nvim-linux64.tar.gz
   tags: &tags_for_nvim [ 'install', 'nvim' ]
 
+- name: Remove old nvim
+  shell: "mv {{ lookup('env', 'HOME') }}/bin/nvim-linux64 {{ lookup('env', 'HOME') }}/bin/nvim-linux64-old"
+  tags: *tags_for_nvim
+
 - name: Install nvim nightly
-  become: true
-  shell: "tar xzvf {{ lookup('env', 'HOME') }}/nvim-linux64.tar.gz "
+  shell: "tar xzvf {{ lookup('env', 'HOME') }}/nvim-linux64.tar.gz -C {{ lookup('env', 'HOME') }}/bin"
   tags: *tags_for_nvim
 
 - name: Check that the somefile.conf exists

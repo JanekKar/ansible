@@ -9,5 +9,4 @@
   snap:
     name:
       - intellij-idea-community
-      - intellij-idea-ultiate
     classic: yes
